@@ -1,0 +1,160 @@
+<section class="main-sec w-1/2 mx-auto">
+  <h1 class="text-center text-4xl text-green-600 py-4">
+    {{ "checkout.tcheckout" | translate }}
+  </h1>
+
+  <form [formGroup]="checkOutForm" (ngSubmit)="submitForm()">
+    <div class="mb-4">
+      <!-- @let detailsControl = checkOutForm.get('details'); -->
+      <label
+        for="details"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.betails" | translate }}</label
+      >
+      <textarea
+        formControlName="details"
+        id="details"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      ></textarea>
+
+      <!-- @if (detailsControl?.errors && detailsControl?.touched) {
+
+    <div
+      class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+      role="alert"
+    >
+      <svg
+        class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+        aria-hidden="true"
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 20 20"
+      >
+        <path
+          d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+        />
+      </svg>
+      <span class="sr-only">Danger</span>
+      <div>
+        <ul class="mt-1.5 list-disc list-inside">
+          @if (detailsControl?.getError('required')) {
+          <li>details is required</li>
+          }@else if (detailsControl?.getError('minlength')) {
+          <li>details Should be more than or equal 3 chars</li>
+          } @else if (detailsControl?.getError('maxlength')) {
+          <li>details Should be less than or equal 20 chars</li>
+          }
+        </ul>
+      </div>
+    </div>
+
+    } -->
+    </div>
+
+    <div class="mb-4">
+      @let phonControl = checkOutForm.get('phone');
+      <label
+        for="phone"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.phone" | translate }}</label
+      >
+      <input
+        type="tel"
+        formControlName="phone"
+        id="phone"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+
+      @if (phonControl?.errors && phonControl?.touched) {
+
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (phonControl?.getError('required')) {
+
+            <li>phone is Required</li>
+
+            } @else if (phonControl?.getError('pattern')) {
+
+            <li>Enter Valid phone</li>
+
+            }
+          </ul>
+        </div>
+      </div>
+
+      }
+    </div>
+
+    <div class="mb-4">
+      @let cityControl = checkOutForm.get('city');
+      <label
+        for="city"
+        class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+        >{{ "checkout.city" | translate }}</label
+      >
+      <input
+        type="text"
+        formControlName="city"
+        id="city"
+        class="bg-white border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+      />
+
+      @if (cityControl?.errors && cityControl?.touched) {
+
+      <div
+        class="flex p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-50 dark:bg-gray-800 dark:text-red-400"
+        role="alert"
+      >
+        <svg
+          class="shrink-0 inline w-4 h-4 me-3 mt-[2px]"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="currentColor"
+          viewBox="0 0 20 20"
+        >
+          <path
+            d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z"
+          />
+        </svg>
+        <span class="sr-only">Danger</span>
+        <div>
+          <ul class="mt-1.5 list-disc list-inside">
+            @if (cityControl?.getError('required')) {
+            <li>city is required</li>
+            }@else if (cityControl?.getError('minlength')) {
+            <li>city Should be more than or equal 3 chars</li>
+            } @else if (cityControl?.getError('maxlength')) {
+            <li>city Should be less than or equal 20 chars</li>
+            }
+          </ul>
+        </div>
+      </div>
+
+      }
+    </div>
+
+    <button
+      [disabled]="checkOutForm.invalid"
+      class="btn-main !rounded-lg"
+      type="submit"
+    >
+      {{ "checkout.onlinePayMent" | translate }}
+    </button>
+  </form>
+</section>

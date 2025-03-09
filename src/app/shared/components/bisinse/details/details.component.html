@@ -1,0 +1,57 @@
+@if (datailsProudct()) {
+
+<section>
+  <h1 class="text-center text-green-600 my-2 text-5xl">
+    {{ "Datails.datailsProduct" | translate }}
+  </h1>
+  <div class="flex items-center">
+    <div class="w-1/4">
+      <owl-carousel-o [options]="customOptions">
+        @for (img of datailsProudct()?.images; track $index) {
+        <ng-template carouselSlide>
+          <div>
+            <img [src]="img" class="w-full" [alt]="datailsProudct()?.title" />
+          </div>
+        </ng-template>
+        }
+      </owl-carousel-o>
+
+      <!-- <img
+        [src]="datailsProudct.imageCover"
+        class="w-full"
+        [alt]="datailsProudct.title"
+      /> -->
+    </div>
+    <div class="w-3/4 px-5">
+      <h2 class="text-4xl">{{ datailsProudct()?.title }}</h2>
+      <p class="line-clamp-none text-gray-500 my-3">
+        {{ datailsProudct()?.description }}
+      </p>
+      <h3 class="text-2xs my-3">{{ datailsProudct()?.category?.name }}</h3>
+
+      <div class="flex justify-between items-center">
+        <span>{{ datailsProudct()?.price }} EGP</span>
+
+        <div class="flex items-center">
+          @for (Dnum of [1,2,3,4,5].slice(0,datailsProudct()?.ratingsAverage);
+          track $index) {
+          <i class="fas fa-star text-yellow-300"></i>
+          } @if (datailsProudct()?.ratingsAverage! % 1 !==0) {
+
+          <i class="fa-solid fa-star-half-stroke text-yellow-300"></i>
+          }
+          <span class="text-gray-500">{{
+            datailsProudct()?.ratingsAverage
+          }}</span>
+        </div>
+      </div>
+      <button
+        class="bg-green-600 text-white py-2 px-10 border rounded w-[100%] mx-auto block mb-3"
+      >
+        {{ "Datails.addcart" | translate }}
+      </button>
+    </div>
+  </div>
+</section>
+
+}

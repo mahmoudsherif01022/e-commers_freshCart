@@ -1,0 +1,96 @@
+{
+  "navbar": {
+    "home": "Home",
+    "products": "Products",
+    "categories": "Categories",
+    "brands": "Brands",
+    "login": "LogIn",
+    "register": "Register",
+    "signout": "SignOut",
+    "lang": "Lang",
+    "openMenu": "Open main menu",
+    "wishList": "WishList"
+  },
+  "login": {
+    "loginNow": "Login Now",
+    "email": "Email",
+    "password": "Password",
+    "SignIn": "Sign In",
+    "ForgotPassword": "ForgotPassword?"
+  },
+  "Forgot": {
+    "forgotPassword": "Forgot Password",
+    "email": "email",
+    "verifyEmail": "Verify Email",
+    "verifyCode": "Verify Code",
+    "resetCode": "resetCode",
+    "newPassword": "newPassword",
+    "resetPassword": "Reset Password"
+  },
+  "register": {
+    "name": "name",
+    "email": "email",
+    "password": "password",
+    "rePassword": "rePassword",
+    "phone": "phone",
+    "singUP": "SingUP"
+  },
+  "footer": {
+    "getTheFreshCart": "Get The FreshCart App",
+    "email": "We Will Send You a Link, Open it on Your Phone to download the app",
+    "input": "email",
+    "button": "Share App Link",
+    "Payment": "Payment partners",
+    "deliveries": "Get Deliveries with FreshCart"
+  },
+  "brands": {
+    "allBrands": "All Brands"
+  },
+  "WishList": {
+    "myWishList": "My WishList"
+  },
+  "categories": {
+    "allcategories": "All categories"
+  },
+  "Products": {
+    "allProducts": "Shop Popular Products"
+  },
+  "home": {
+    "ppopularCategories": "Ppopular Categories",
+    "ppopularproducts": "Ppopular products",
+    "input": "email"
+  },
+  "cart": {
+    "noData": "No Data Found",
+    "shopCart": "Shop Cart",
+    "totalPrice ": "Total Cart Price ",
+    "clearCart": "Clear Cart",
+    "remove": "Remove",
+    "checkout": "checkout",
+    "tITEL": "TITEL",
+    "qTY": "QTY",
+    "pRICE": "PRICE",
+    "aCTION": "ACTION"
+  },
+  "checkout": {
+    "tcheckout": "checkout",
+    "betails": "betails",
+    "phone": "phone",
+    "clearCart": "Clear Cart",
+    "city": "city",
+    "onlinePayMent": "Online PayMent"
+  },
+  "Datails": {
+    "datailsProduct": "Datails Product",
+    "addcart": "+Add To Cart"
+  },
+  "allorders": {
+    "paymentSuccessful": "Payment Successful",
+    "text": "Thanks for making a purchase you can check our order summary frm below",
+    "orderId": "Order Id:",
+    "orderPayment": "Order Payment :",
+    "paidUsingCard": "Paid using card",
+    "totalPrice": "Total Price:",
+    "BtnCancelOrder": "cancelOrder"
+  }
+}

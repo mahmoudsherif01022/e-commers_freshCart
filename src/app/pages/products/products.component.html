@@ -1,0 +1,66 @@
+<section class="mx-auto main-sec">
+  <h2 class="text-4xl text-green-600 text-center py-10">
+    {{ "Products.allProducts" | translate }}
+  </h2>
+  <input
+    [(ngModel)]="iteams"
+    type="search"
+    class="bg-gray-50 border border-green-600 text-gray-900 text-sm rounded-lg focus:ring-[] focus:border-green-600 block mx-auto w-1/2 p-2.5 my-6 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-600 dark:focus:border-green-600"
+    placeholder="search:..."
+  />
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-10 px-10">
+    @for (prod of products |search:iteams; track $index) {
+
+    <div
+      class="card border border-green-600 rounded-md overflow-hidden relative hover:shadow-md hover:shadow-green-600"
+    >
+      <div
+        [routerLink]="['/details', prod._id]"
+        routerLinkActive="router-link-active"
+      >
+        <div class="card-img">
+          <img
+            [src]="prod.imageCover"
+            class="w-full h-[250px] object-contain"
+            alt=""
+          />
+        </div>
+        <div class="card-body px-2 py-4">
+          <h4 class="text-green-600 text-xs">{{ prod.category.name }}</h4>
+          <h3 class="font-medium text-gray-600">
+            {{ prod.title.split(" ", 2).join(" ") }}
+          </h3>
+          <div class="flex justify-between items-center text-gray-600">
+            <span>{{ prod.price }} EGP</span>
+            <div class="flex items-center">
+              <i class="fas fa-star text-yellow-500"></i>
+              <span class="text-gray-500">{{ prod.ratingsAverage }}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="flex items-center">
+        <button
+          (click)="addToCart(prod.id)"
+          class="ml-3 mx-auto bg-green-600 w-[70%] rounded block py-1"
+        >
+          + Add To Cart
+        </button>
+        @if(!wishList.includes(prod.id)){
+        <i
+          (click)="addToWishlist(prod.id)"
+          class="fa-solid fa-heart text-3xl text-gray-800 pr-2 cursor-pointer"
+        >
+        </i>
+        } @if(wishList.includes(prod.id)){
+        <i
+          (click)="removeFromWishlist(prod.id)"
+          class="fa-solid fa-heart text-green-600 text-3xl pr-2 cursor-pointer"
+        >
+        </i>
+        }
+      </div>
+    </div>
+    }
+  </div>
+</section>

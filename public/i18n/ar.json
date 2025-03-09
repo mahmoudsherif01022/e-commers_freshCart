@@ -1,0 +1,97 @@
+{
+  "navbar": {
+    "home": "الرئيسية",
+    "products": "المنتجات",
+    "categories": "الفئات",
+    "brands": "العلامات التجارية",
+    "login": "تسجيل الدخول",
+    "register": "إنشاء حساب",
+    "signout": "تسجيل الخروج",
+    "lang": "اللغة",
+    "openMenu": "فتح القائمة الرئيسية",
+    "wishList": "قائمة الرغبات"
+  },
+  "login": {
+    "loginNow": "تسجيل الدخول الآن",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "SignIn": "تسجيل الدخول",
+    "ForgotPassword": "هل نسيت كلمة المرور؟"
+  },
+  "Forgot": {
+    "forgotPassword": "نسيت كلمة المرور",
+    "email": "البريد الإلكتروني",
+    "verifyEmail": "تحقق من البريد الإلكتروني",
+    "verifyCode": "تحقق من الرمز",
+    "resetCode": "إعادة تعيين الرمز",
+    "newPassword": "كلمة المرور الجديدة",
+    "resetPassword": "إعادة تعيين كلمة المرور"
+  },
+  "register": {
+    "register": " إنشاء حساب الان",
+    "name": "الاسم",
+    "email": "البريد الإلكتروني",
+    "password": "كلمة المرور",
+    "rePassword": "إعادة كلمة المرور",
+    "phone": "رقم الهاتف",
+    "singUP": "إنشاء حساب"
+  },
+  "footer": {
+    "getTheFreshCart": "احصل على تطبيق فريش كارت",
+    "email": "سنرسل لك رابطًا، افتحه على هاتفك لتنزيل التطبيق",
+    "input": "البريد الإلكتروني",
+    "button": "مشاركة رابط التطبيق",
+    "Payment": "شركاء الدفع",
+    "deliveries": "احصل على التوصيل مع فريش كارت"
+  },
+  "brands": {
+    "allBrands": "جميع العلامات التجارية"
+  },
+  "WishList": {
+    "myWishList": "قائمة رغباتي"
+  },
+  "categories": {
+    "allcategories": "جميع الفئات"
+  },
+  "Products": {
+    "allProducts": "تسوق المنتجات الشائعة"
+  },
+  "home": {
+    "ppopularCategories": "الفئات الشائعة",
+    "ppopularproducts": "المنتجات الشائعة"
+  },
+  "cart": {
+    "noData": "لا توجد بيانات",
+    "shopCart": "سلة التسوق",
+    "totalPrice": "إجمالي سعر السلة",
+    "clearCart": "مسح السلة",
+    "remove": "إزالة",
+    "checkout": "الدفع",
+    "tITEL": "العنوان",
+    "qTY": "الكمية",
+    "pRICE": "السعر",
+    "aCTION": "الإجراء"
+  },
+  "checkout": {
+    "tcheckout": "الدفع",
+    "betails": "التفاصيل",
+    "phone": "رقم الهاتف",
+    "clearCart": "مسح السلة",
+    "city": "المدينة",
+    "onlinePayMent": "الدفع عبر الإنترنت"
+  },
+  "Datails": {
+    "datailsProduct": "تفاصيل المنتج",
+    "addcart": "أضف إلى السلة"
+  },
+
+  "allorders": {
+    "paymentSuccessful": "تم الدفع بنجاح",
+    "text": "شكرًا على الشراء! يمكنك التحقق من ملخص طلبك أدناه",
+    "orderId": "رقم الطلب:",
+    "orderPayment": "طريقة الدفع:",
+    "paidUsingCard": "تم الدفع باستخدام البطاقة",
+    "totalPrice": "إجمالي السعر:",
+    "BtnCancelOrder": "إلغاء الطلب"
+  }
+}

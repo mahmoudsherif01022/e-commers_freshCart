@@ -1,0 +1,23 @@
+<section class="mx-auto main-sec">
+  <h1 class="text-4xl text-green-600 text-center py-10">
+    {{ "categories.allcategories" | translate }}
+  </h1>
+  <div class="grid sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-5 px-4">
+    @for (cate of categories ; track $index) {
+    <div
+      [routerLink]="['/detailsCategories', cate._id]"
+      class="card border border-green-600 rounded-md overflow-hidden relative hover:shadow-md hover:shadow-greborder-green-600"
+      data-modal-target="popup-modal"
+      data-modal-toggle="popup-modal"
+    >
+      <div class="card-img">
+        <img [src]="cate.image" class="w-full h-[300px]" alt="" />
+      </div>
+
+      <div class="card-body px-2 py-5">
+        <h2 class="font-medium text-green-600 text-center">{{ cate.name }}</h2>
+      </div>
+    </div>
+    }
+  </div>
+</section>

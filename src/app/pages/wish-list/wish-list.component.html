@@ -1,0 +1,52 @@
+<section class="mx-auto main-sec">
+  <h2 class="text-4xl text-green-600 text-center py-10">
+    {{ "WishList.myWishList" | translate }}
+  </h2>
+
+  <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <table
+      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
+    >
+      <tbody>
+        @for (prod of products ; track $index) {
+        <tr
+          class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200 hover:bg-gray-50 dark:hover:bg-green-600 gap-5"
+        >
+          <td class="p-4 flex items-center">
+            <img
+              [src]="prod.imageCover"
+              class="w-16 md:w-44 max-w-full max-h-full"
+              alt="Apple Watch"
+              [alt]="prod.category.name"
+            />
+            <div class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+              {{ prod.category.name }}
+              <h3 class="font-medium text-green-600">
+                {{ prod.title.split(" ", 2).join(" ") }}
+              </h3>
+              <span>{{ prod.price }} EGP</span>
+            </div>
+          </td>
+
+          <td class="px-6 py-4">
+            <a
+              (click)="removeFromWishlist(prod.id)"
+              class="font-medium cursor-pointer text-red-600 dark:text-red-500 hover:underline"
+              ><i class="fa fa-trash text-red-600 pr-1"></i>Remove</a
+            >
+          </td>
+          <td class="px-6 py-4">
+            <button>
+              <a
+                (click)="addToCart(prod.id)"
+                class="font-medium bg-green-600 p-3 rounded-md text-white dark:text-red-500 hover:underline"
+                >+Add To Cart</a
+              >
+            </button>
+          </td>
+        </tr>
+        }
+      </tbody>
+    </table>
+  </div>
+</section>
