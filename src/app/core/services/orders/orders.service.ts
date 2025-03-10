@@ -15,7 +15,7 @@ export class OrdersService {
 
   onlinePayment(data: object, cartId: string): Observable<any> {
     return this._httpClient.post(
-      `${environments.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=https://e-commerce-fresh-cart-rho.vercel.app/${this.encodedChar}`,
+      `${environments.baseUrl}/api/v1/orders/checkout-session/${cartId}?url=http://localhost:4200`,
       {
         shippingAddress: data,
       }

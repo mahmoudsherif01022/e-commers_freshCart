@@ -11,9 +11,10 @@ import {
   ReactiveFormsModule,
   Validators,
 } from '@angular/forms';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { OrdersService } from '../../core/services/orders/orders.service';
 import { TranslatePipe } from '@ngx-translate/core';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-checkout',
@@ -25,6 +26,8 @@ export class CheckoutComponent implements OnInit {
   private readonly _formBuilder = inject(FormBuilder);
   private readonly _activatedRoute = inject(ActivatedRoute);
   private readonly _ordersService = inject(OrdersService);
+  private readonly _toastrService = inject(ToastrService);
+  private readonly _router = inject(Router);
 
   checkOutForm!: FormGroup;
   cartId: WritableSignal<string> = signal('');
@@ -55,15 +58,36 @@ export class CheckoutComponent implements OnInit {
     // console.log(this._activatedRoute.snapshot.paramMap.get('id'));
   }
 
-  submitForm(): void {
+  submitOnlineForm(): void {
     this.cartId;
     this._ordersService
-      .checkoutPayMant(this.cartId(), this.checkOutForm.value)
+      .onlinePayment(this.checkOutForm.value, this.cartId())
       .subscribe({
         next: (res) => {
           console.log(res);
           if (res.status === 'success') {
             open(res.session.url, '_self');
+          }
+        },
+        error: (err) => {
+          console.log(err);
+        },
+      });
+  }
+
+  submitCashForm(): void {
+    this.cartId;
+    this._ordersService
+      .cashPayment(this.checkOutForm.value, this.cartId())
+      .subscribe({
+        next: (res) => {
+          console.log(res);
+          if (res.status === 'success') {
+            this._toastrService.success(res.status, 'Fresh Cart');
+            setTimeout(() => {
+              this._router.navigate(['/allorders']);
+            }, 500);
+            this._router.navigate(['/allorders']);
           }
         },
         error: (err) => {

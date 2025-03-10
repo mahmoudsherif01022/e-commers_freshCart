@@ -78,7 +78,8 @@
     "phone": "phone",
     "clearCart": "Clear Cart",
     "city": "city",
-    "onlinePayMent": "Online PayMent"
+    "onlinePayMent": "Online PayMent",
+    "cashPayMent": "Cash PayMent"
   },
   "Datails": {
     "datailsProduct": "Datails Product",

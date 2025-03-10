@@ -78,7 +78,8 @@
     "phone": "رقم الهاتف",
     "clearCart": "مسح السلة",
     "city": "المدينة",
-    "onlinePayMent": "الدفع عبر الإنترنت"
+    "onlinePayMent": "الدفع عبر الإنترنت",
+    "cashPayMent": "الدفع عبر نقدا"
   },
   "Datails": {
     "datailsProduct": "تفاصيل المنتج",

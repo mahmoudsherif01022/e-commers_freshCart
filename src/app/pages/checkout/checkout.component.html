@@ -3,7 +3,7 @@
     {{ "checkout.tcheckout" | translate }}
   </h1>
 
-  <form [formGroup]="checkOutForm" (ngSubmit)="submitForm()">
+  <form [formGroup]="checkOutForm">
     <div class="mb-4">
       <!-- @let detailsControl = checkOutForm.get('details'); -->
       <label
@@ -148,13 +148,24 @@
 
       }
     </div>
+    <div class="flex justify-between">
+      <button
+        (click)="submitOnlineForm()"
+        [disabled]="checkOutForm.invalid"
+        class="btn-main !rounded-lg"
+        type="submit"
+      >
+        {{ "checkout.onlinePayMent" | translate }}
+      </button>
 
-    <button
-      [disabled]="checkOutForm.invalid"
-      class="btn-main !rounded-lg"
-      type="submit"
-    >
-      {{ "checkout.onlinePayMent" | translate }}
-    </button>
+      <button
+        (click)="submitCashForm()"
+        [disabled]="checkOutForm.invalid"
+        class="btn-main !rounded-lg"
+        type="submit"
+      >
+        {{ "checkout.cashPayMent" | translate }}
+      </button>
+    </div>
   </form>
 </section>
