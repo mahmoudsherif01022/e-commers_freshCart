@@ -62,7 +62,7 @@ export class CheckoutComponent implements OnInit {
       .subscribe({
         next: (res) => {
           console.log(res);
-          if (res.ststus === 'success') {
+          if (res.status === 'success') {
             open(res.session.url, '_self');
           }
         },
